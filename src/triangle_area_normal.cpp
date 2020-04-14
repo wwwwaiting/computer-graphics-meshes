@@ -8,6 +8,9 @@ Eigen::RowVector3d triangle_area_normal(
 {
   ////////////////////////////////////////////////////////////////////////////
   // Replace with your code:
+  Eigen::RowVector3d normalized_n = (b-a).cross(c-a).normalized();
+  // get area for the length of the vector
+  double area = 0.5 * (b-a).cross(c-a).norm();
   ////////////////////////////////////////////////////////////////////////////
-  return Eigen::RowVector3d(0,0,0);
+  return area * normalized_n;
 }
